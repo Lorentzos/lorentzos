@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <meta name="next-head-count" content="10">
+  <title>Lorentzos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div>
+    <main class="main-content">
+      <div class="home-container" id="home">
+        <nav class="header-nav navbar navbar-expand-md navbar-light">
+          <div class="container">
+    
+            <div class="offcanvas-body offcanvas offcanvas-end">
+       
+            </div>
+          </div>
+        </nav>
+        <div class="container">
+          <div class="hero-container row">
+            <section class="hero-section">
+                <h2>LORENTZOS</h2>
+            </section>
+          </div>
+          <div class="media-container row">
+            <img alt="lorentzos stripes" src="images/bg_stripes.svg" width="203" height="220" decoding="async" data-nimg="1" class="stripes" style="color:transparent">
+            <div class="blob"></div>
+            <div class="media-section col-xxl-3 col-md-6 col-sm-12">
+              <div class="media-section-wrapper">
+                <div class="media-section-container">
+                   <a href="qrcodegenerate/qrcode.html" target="_blank" rel="noopener noreferrer" class="media-section-link">
+                  <div>
+                    <h3 class="media-section-title">Qr Code</h3>
+                    <p class="media-section-description">Generate custom qr codes with lorentzos qr code generator</p>
+                  </div>
+                  <p class="media-section-learn">Learn more →</p></a>
+                </div>
+              </div>
+            </div>
+            <div class="media-section col-xxl-3 col-md-6 col-sm-12">
+              <div class="media-section-wrapper">
+                <div class="media-section-container">
+                  <div></div><a href="jsencrypt/obfuscate.html" target="_blank" rel="noopener noreferrer" class="media-section-link">
+                  <div>
+                    <h3 class="media-section-title">JavaScript Obfuscator</h3>
+                    <p class="media-section-description">Encrypt your javascript code and saty safe from incognito</p>
+                  </div>
+                  <p class="media-section-learn">Learn more →</p></a>
+                </div>
+              </div>
+            </div>
+            <div class="media-section col-xxl-3 col-md-6 col-sm-12">
+              <div class="media-section-wrapper">
+                <div class="media-section-container">
+                    <div></div><a href="https://taxithassoslimenariapotos.com/home.html" target="_blank" rel="noopener noreferrer" class="media-section-link">
+                  <div>
+                    <h3 class="media-section-title">Taxi WebSite</h3>
+                    <p class="media-section-description">Take a look in my latest build</p>
+                  </div>
+                  <p class="media-section-learn">Learn more →</p></a>
+                </div>
+              </div>
+            </div>
+            <div class="media-section col-xxl-3 col-md-6 col-sm-12">
+              <div class="media-section-wrapper">
+                <div class="media-section-container">
+                  <div></div><a href="https://www.instagram.com/lorentzos._/?hl=en" target="_blank" rel="noopener noreferrer" class="media-section-link">
+                  <div>
+                    <h3 class="media-section-title">Instagram</h3>
+                    <p class="media-section-description">Follow me for more</p>
+                  </div>
+                  <p class="media-section-learn">Learn more →</p></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="contact" class="contact-container row">
+            <section class="contact-section">
+              <h2 class="contact-header">Contact Us</h2>
+              <img alt="lorentzos stripes" src="images/bg_stripes.svg" width="303" height="320" decoding="async" data-nimg="1" class="contact-stripes" style="color:transparent">
+              <form id="contact-form" class="contact-form" name="contact-form">
+                <input name="name" placeholder="Name" type="text" class="contact-input form-control">
+                <textarea name="text" placeholder="Write me..." class="contact-input contact-input-email form-control"></textarea>
+                <div class="contact-email-wrapper">
+                  <input name="email" placeholder="Email" type="email" class="contact-input form-control">
+                  <button class="button-main button-small contact-button" type="button" onclick="submitForm()">Submit</button>
+                </div>
+            </form>
+          </section>
+        </div>
+      </div>
+        <div class="footer-container">
+          <div class="container">
+            <div class="footer-copyright col-12">
+                <br>
+              <a>Copyright © 2023. lorentzos. All Rights Reserved</a>
+              <br>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script>
+    function submitForm() {
+
+      const formData = {
+        name: document.forms["contact-form"]["name"].value,
+        text: document.forms["contact-form"]["text"].value,
+        email: document.forms["contact-form"]["email"].value
+      };
+  
+ 
+      if (!formData.name || !formData.text || !formData.email) {
+        alert("Please fill in all fields before submitting.");
+        return;
+      }
+  
+
+      const webhookUrl = "https://discord.com/api/webhooks/1177332378142789632/OwLfxl6N5yZIbGiHfuXZAfHDnB6_OJ5EbutMr0l6jW49v_th2nP7wAtLP3ZnwgmRjkev";
+  
+    
+      fetch(webhookUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          embeds: [
+            {
+              title: "New Contact Us",
+              fields: [
+                { name: "Name", value: formData.name, inline: true },
+                { name: "Email", value: formData.email, inline: true },
+                { name: "Message", value: formData.text },
+              ],
+            },
+          ],
+        }),
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+          }
+          return response.json();
+        })
+        .then((data) => {
+          console.log("Success:", data);
+
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        
+        });
+    }
+  </script>
+  
+</body>
+</html>
