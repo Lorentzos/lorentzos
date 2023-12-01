@@ -65,6 +65,10 @@ p, h1, h2, h3, h4, h5, h6, a, textarea, input, button {
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 
+h2 ,a {
+       color: #ffffff;
+}
+
 body::-webkit-scrollbar{
     width:0
 }
@@ -129,6 +133,10 @@ body:after{
         max-width:50px
     }
 }
+h2 ,a {
+       color: #ffffff;
+}
+
 .offcanvas-header{
     padding:0;
     align-self:flex-end
@@ -167,6 +175,11 @@ body:after{
         font-size:18px!important;
         width:100%
     }
+
+    h2 ,a {
+       color: #ffffff;
+}
+
 }
 .button-main{
     font-size:20px;
@@ -204,6 +217,10 @@ body:after{
 .hero_button__bDBfl{
     margin-top:20px
 }
+h2 ,a {
+       color: #ffffff;
+}
+
 .media-section{
     padding:10px;
     position:relative;
@@ -218,6 +235,10 @@ body:after{
     height:100%;
     padding:34px 20px 5px 30px
 }
+h2 ,a {
+       color: #ffffff;
+}
+
 .media-section-title{
     color:#fff;
     font-weight:400;
