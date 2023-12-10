@@ -124,23 +124,6 @@ a:hover {
             margin: 0;
             text-align: center;
         }
-
-            /* Add animation to content-top-border and content-bottom-border */
-    .content-top-border,
-    .content-bottom-border {
-      height: 5px;
-      background-color: #3498db;
-      animation: borderAnimation 2s infinite alternate;
-    }
-
-    @keyframes borderAnimation {
-      0% {
-        width: 0;
-      }
-      100% {
-        width: 100%;
-      }
-    }
     </style>
 </head>
 <body>
@@ -156,9 +139,7 @@ a:hover {
             <div class="card" onclick="location.href='https://bit.ly/lorentzos';"><img class="logo" src="img/watermark.png"/>
             </div>
             <div class="card" onclick="location.href='https://bit.ly/lorentzos';">
-           
             <caption class="caption-main">
-              <div class="content-top-border"></div>
                 </div>
               <h3 class="title">Δρομολόγια ΚΤΕΛ</h3>
               <h3 class="top_number">Επικοινωνήστε με το ΚΤΕΛ Θάσου για να επιβεβαιώσετε τα σημερινά δρομολόγια λεωφορείων, Καλώντας στο: <a href='tel:00302593022162' class='text-decoration-none'>+30 25930 22162</a></h3>
@@ -169,9 +150,9 @@ a:hover {
                 <th class="days" colspan="3">Δευτέρα - Παρασκευή</th>
               </tr>
               <tr class="secondary">
-                <th class="routes" style="color: #333;">Δρομολόγια</th>
-                <th class="times" style="color: #333;">Ώρες</th>
-                <th class="prices" style="color: #333;">€</th>
+                <th class="routes">Δρομολόγια</th>
+                <th class="times">Ώρες</th>
+                <th class="prices">€</th>
               </tr>
             </thead>
             <tbody>
@@ -418,9 +399,9 @@ a:hover {
                 <th class="days" colspan="3">Σάββατο</th>
               </tr>
               <tr class="secondary">
-                <th class="routes" style="color: #333;">Δρομολόγια</th>
-                <th class="times" style="color: #333;">Ώρες</th>
-                <th class="prices" style="color: #333;">€</th>
+                <th class="routes">Δρομολόγια</th>
+                <th class="times">Ώρες</th>
+                <th class="prices">€</th>
               </tr>
             </thead>
             <tbody>
