@@ -1,0 +1,5 @@
+icloudbypass.zip
+
+you need to connect the iphone with pc to work!
+
+main file [ skoda.exe ]
