@@ -8,147 +8,182 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
   <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-    }
+  body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
 
-    /* Add animation to content-top-border and content-bottom-border */
-    .content-top-border,
-    .content-bottom-border {
-      height: 5px;
-      background-color: #3498db;
-      animation: borderAnimation 2s infinite alternate;
-    }
+.content-top-border,
+.content-bottom-border {
+  height: 5px;
+  background-color: #3498db;
+  animation: borderAnimation 2s infinite alternate;
+}
 
-    @keyframes borderAnimation {
-      0% {
-        width: 0;
-      }
-      100% {
-        width: 100%;
-      }
-    }
+@keyframes borderAnimation {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
 
-    #content {
-      background-color: #fff;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      margin: 20px auto;
-      padding: 20px;
-      max-width: 800px;
-    }
+#content {
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 800px;
+}
 
-    #content-inner {
-      margin: 20px;
-    }
+#content-inner {
+  margin: 20px;
+}
 
-    /* Add styles for your main content grid */
-    #main-content {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-    }
+#main-content {
+  display: flex;
+  flex-direction: column; /* Change to column for mobile devices */
+  align-items: center; /* Center content */
+}
 
-    .grid-14 {
-      width: 70%;
-      margin-right: 20px;
-    }
+.grid-14 {
+  width: 100%; /* Full width on mobile */
+  margin-right: 0; /* No margin on mobile */
+}
 
-    /* Style the tabs */
-    .ui-tabs-nav {
-      background-color: #3498db;
-      padding: 10px;
-      border-radius: 5px;
-      margin-bottom: 20px;
-    }
+.ui-tabs-nav {
+  background-color: #3498db;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
 
-    .ui-tabs-nav li {
-      display: inline-block;
-      margin-right: 10px;
-    }
+.ui-tabs-nav li {
+  display: block; /* Display tabs vertically on mobile */
+  margin-bottom: 5px;
+}
 
-    .ui-tabs-nav a {
-      color: #fff;
-      text-decoration: none;
-      padding: 5px 10px;
-      border-radius: 5px;
-    }
+.ui-tabs-nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: block; /* Display tabs as blocks on mobile */
+}
 
-    /* Style the tables */
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 20px;
-    }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
 
-    th, td {
-      border: 1px solid #ddd;
-      padding: 8px;
-      text-align: left;
-    }
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
 
-    th {
-      background-color: #3498db;
-      color: #fff;
-    }
+th {
+  background-color: #3498db;
+  color: #fff;
+}
 
-    /* Add a shadow to the disclaimer */
-    .disclaimer {
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      padding: 20px;
-      margin-top: 20px;
-    }
+.disclaimer {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-top: 20px;
+}
 
-    /* Style the contact details */
-    .bg-white {
-      background-color: #fff;
-      padding: 20px;
-      border-bottom: 1px solid #ddd;
-      display: flex;
-    }
-/* Add this style for the centered image */
+.bg-white {
+  border-bottom: 1px solid;
+  display: flex;
+  padding: 30px;
+}
+.bg-white div {
+  width: 50%;
+}
+.bg-white .centered-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* Left align content in each half */
+.bg-white .left-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  height: 100%;
+}
+
+/* Links styling */
+.bg-white a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .bg-white {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .bg-white div {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+}
 .centered-image-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 20px; /* Adjust margin as needed */
+  margin-top: 20px;
 }
 
 .logo {
-  max-width: 100%; /* Ensure the image doesn't exceed its container */
+  max-width: 100%;
   height: auto;
 }
 
 .card {
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            transition: transform 0.3s;
-            cursor: pointer;
-            margin: 10px;
-            width: 300px;
-        }
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s;
+  cursor: pointer;
+  margin: 10px;
+  width: 100%; /* Full width on mobile */
+}
 
-        .card:hover {
-            transform: scale(1.05);
-        }
+.card:hover {
+  transform: scale(1.05);
+}
 
-        .card img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border-bottom: 1px solid #ddd;
-        }
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+}
 
-        .card h2 {
-            padding: 15px;
-            color: #333;
-            margin: 0;
-            text-align: center;
-        }
+.card h2 {
+  padding: 15px;
+  color: #333;
+  margin: 0;
+  text-align: center;
+}
+
+
+
     /* Add more styles as needed */
   </style>
 
