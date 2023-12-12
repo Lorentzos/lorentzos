@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <meta name="next-head-count" content="10">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lorentzos</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
   <style>
   body {
   font-family: 'Arial', sans-serif;
@@ -160,8 +157,9 @@ th {
   overflow: hidden;
   transition: transform 0.3s;
   cursor: pointer;
-  margin: 10px;
-  width: 100%; /* Full width on mobile */
+  margin: 10px auto;
+  width: 100%; /* Adjusted for responsiveness */
+  max-width: 300px; /* Added for responsiveness */
 }
 
 .card:hover {
@@ -171,9 +169,10 @@ th {
 .card img {
   width: 100%;
   height: 150px;
-  object-fit: cover;
+  object-fit: contain;
   border-bottom: 1px solid #ddd;
 }
+
 
 .card h2 {
   padding: 15px;
@@ -186,7 +185,7 @@ th {
 
     /* Add more styles as needed */
   </style>
-
+</head>
 <body>
 
 <!-- Your content goes here -->
