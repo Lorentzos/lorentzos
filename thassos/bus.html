@@ -5,95 +5,149 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lorentzos</title>
     <style>
-body {
-  font-family: Arial, sans-serif;
+  body {
+  font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
+  background-color: #f4f4f4;
 }
 
-.content {
-  max-width: 800px;
+.content-top-border,
+.content-bottom-border {
+  height: 5px;
+  background-color: #3498db;
+  animation: borderAnimation 2s infinite alternate;
+}
+
+@keyframes borderAnimation {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+#content {
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin: 20px auto;
   padding: 20px;
-  border: 1px solid #ccc;
+  max-width: 800px;
+}
+
+#content-inner {
+  margin: 20px;
+}
+
+#main-content {
+  display: flex;
+  flex-direction: column; /* Change to column for mobile devices */
+  align-items: center; /* Center content */
+}
+
+.grid-14 {
+  width: 100%; /* Full width on mobile */
+  margin-right: 0; /* No margin on mobile */
+}
+
+.ui-tabs-nav {
+  background-color: #3498db;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.ui-tabs-nav li {
+  display: block; /* Display tabs vertically on mobile */
+  margin-bottom: 5px;
+}
+
+.ui-tabs-nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: block; /* Display tabs as blocks on mobile */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #3498db;
+  color: #fff;
+}
+
+.disclaimer {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.bg-white {
+  border-bottom: 1px solid;
+  display: flex;
+  padding: 30px;
+}
+.bg-white div {
+  width: 50%;
+}
+.bg-white .centered-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* Left align content in each half */
+.bg-white .left-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  height: 100%;
+}
+
+/* Links styling */
+.bg-white a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .bg-white {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .bg-white div {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+}
+.centered-image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
 }
 
 .logo {
   max-width: 100%;
   height: auto;
-}
-
-.caption-main {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.title {
-  margin: 10px 0;
-}
-
-.top_number {
-  font-size: 14px;
-  margin: 5px 0;
-}
-
-.valid {
-  font-weight: bold;
-  margin: 10px 0;
-}
-
-.primary {
-  background-color: #3498db;
-  color: #fff;
-}
-
-.secondary {
-  background-color: #2980b9;
-  color: #fff;
-}
-
-th {
-  padding: 10px;
-}
-
-.routes,
-.times,
-.prices {
-  padding: 10px;
-}
-
-.routes {
-  width: 40%;
-}
-
-.times {
-  width: 40%;
-}
-
-.prices {
-  width: 20%;
-}
-
-tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
-
-tr:hover {
-  background-color: #ddd;
-}
-
-time {
-  font-weight: bold;
-}
-
-a {
-  color: #3498db;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
 }
 
 .card {
@@ -119,6 +173,7 @@ a:hover {
   border-bottom: 1px solid #ddd;
 }
 
+
 .card h2 {
   padding: 15px;
   color: #333;
@@ -126,35 +181,6 @@ a:hover {
   text-align: center;
 }
 
-/* Add animation to content-top-border and content-bottom-border */
-.content-top-border,
-.content-bottom-border {
-  height: 5px;
-  background-color: #3498db;
-  animation: borderAnimation 2s infinite alternate;
-}
-
-@keyframes borderAnimation {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 100%;
-  }
-}
-
-/* Media queries for responsiveness */
-@media (max-width: 600px) {
-  .content {
-    padding: 10px;
-  }
-
-  .routes,
-  .times,
-  .prices {
-    width: 100%;
-  }
-}
 
     </style>
 </head>
