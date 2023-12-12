@@ -1,3 +1,0 @@
-host github,hostinager
-domain google domains, name cheap
-payment method stripe
