@@ -34,6 +34,65 @@
             margin-bottom: 0;
         }
 
+
+
+
+
+        .content-top-border,
+.content-bottom-border {
+  height: 5px;
+  background-color: #3498db;
+  animation: borderAnimation 2s infinite alternate;
+}
+
+@keyframes borderAnimation {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+
+
+        .logo {
+  max-width: 100%;
+  height: auto;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s;
+  cursor: pointer;
+  margin: 10px auto;
+  width: 100%; /* Adjusted for responsiveness */
+  max-width: 300px; /* Added for responsiveness */
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+  border-bottom: 1px solid #ddd;
+}
+
+
+.card h2 {
+  padding: 15px;
+  color: #333;
+  margin: 0;
+  text-align: center;
+}
+
+
 </style>
 <body>
   <div>
@@ -52,7 +111,7 @@
         <div class="container">
           <div class="hero-container row">
             <section class="hero-section">
-            <h2>LORENTZOS</h2><img class="logo" src="images/watermarklo.png"/>
+              <div class="card" onclick="location.href='https://lorentzos.digital';"><img class="logo" src="../img/watermark.png"/>       <div class="content-top-border"></div>
             </section>
           </div>
           <div class="media-container row">
