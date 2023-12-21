@@ -427,6 +427,19 @@ h2 ,a {
     z-index:-1;
     opacity:1
 }
+
+.stripe2{
+    width:-moz-fit-content;
+    width:fit-content;
+    position:absolute;
+    top:0;
+    left:0;
+    margin-top:-100px;
+    margin-left:-90px;
+    z-index:-1;
+    opacity:1
+}
+
 @media(max-width:768px){
     .stripes{
         visibility:hidden
