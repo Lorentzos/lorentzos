@@ -141,48 +141,15 @@ h2 ,a {
        color: #ffffff;
 }
 
-.offcanvas-header{
-    padding:0;
-    align-self:flex-end
-}
-.offcanvas-body{
-    padding:0!important
-}
-.close-btn{
-    padding:20px
-}
-.offcanvas-body{
-    padding:10px;
-    background-color:#0f172b;
-    max-width:80vw
-}
+
 @media(min-width:768px){
-    .offcanvas-body{
-        background-color:transparent
-    }
     h2 ,a {
         color: #ffffff;
  }
 }
-.header_link__QXgbN{
-    border:none;
-    background:none;
-    padding:7px 20px!important;
-    font-size:16px!important;
-    border-radius:6px;
-    color:#fff!important;
-    text-align:center
-}
-.header_link__QXgbN:hover{
-    outline:1px solid #444d64
-}
-@media(max-width:768px){
-    .header_link__QXgbN{
-        padding:20px 0!important;
-        font-size:18px!important;
-        width:100%
-    }
 
+
+@media(max-width:768px){
     h2 ,a {
        color: #ffffff;
 }
@@ -206,24 +173,10 @@ h2 ,a {
     flex-direction:column;
     align-items:center
 }
-.hero_image__QXmyJ{
-    max-width:70vw
-}
-.hero_description__KaqKY{
-    margin-top:28px;
-    font-size:24px;
-    font-weight:300
-}
-@media(max-width:768px){
-    .hero_description__KaqKY{
-        font-size:18px;
-        font-weight:300;
-        margin-top:13px
-    }
-}
-.hero_button__bDBfl{
-    margin-top:20px
-}
+
+
+
+
 h2 ,a {
        color: #ffffff;
 }
@@ -269,16 +222,7 @@ h2 ,a {
     font-size:14px;
     color:#00ded8
 }
-.media-section_icon-container__TyLbk{
-    padding:8px;
-    position:absolute;
-    top:-23px;
-    background:hsla(0,0%,100%,.18);
-    border-radius:50px;
-    -webkit-backdrop-filter:blur(5px);
-    backdrop-filter:blur(5px);
-    border:1px solid hsla(0,0%,100%,.3)
-}
+
 .media-section-wrapper{
     height:100%;
     flex-wrap:wrap;
@@ -290,14 +234,14 @@ h2 ,a {
     background:#0f172b;
     background-image:linear-gradient(#0f172b,#0f172b),linear-gradient(var(--angle),#2a3246 0,#2a3246 30%,#00ded8 50%,#2a3246 70%,#2a3246 100%);
     background-clip:content-box,border-box;
-    animation:media-section_rotate__ePVe8 10s linear infinite
+    animation:media-section_rotate 10s linear infinite
 }
 @property --angle{
     syntax:"<angle>";
     initial-value:0deg;
     inherits:false
 }
-@keyframes media-section_rotate__ePVe8{
+@keyframes media-section_rotate{
     to{
         --angle:360deg
     }
@@ -367,11 +311,7 @@ h2 ,a {
     display:flex;
     position:relative
 }
-.contact_alert__0sLoa{
-    margin-top:40px;
-    width:100%;
-    max-width:450px
-}
+
 .contact-stripes{
     position:absolute;
     top:0;
@@ -473,9 +413,9 @@ h2 ,a {
     width:40vh;
     background-image:radial-gradient(circle at 50% 50%,#b74f92 0,rgba(15,23,43,0) 70%);
     z-index:-1;
-    animation:Home_breathing__5ph2M 5s ease-out infinite normal
+    animation:Home_breathing 5s ease-out infinite normal
 }
-@keyframes Home_breathing__5ph2M{
+@keyframes Home_breathing{
     0%{
         transform:scale(1) translate(-60%,-50%);
         opacity:.08
