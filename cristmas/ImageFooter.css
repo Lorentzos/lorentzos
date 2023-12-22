@@ -1,0 +1,10 @@
+#bottom-of-site {
+    position: relative;
+  }
+  
+  #rocks {
+    background-image: url('images/snowTerain.png');
+    background-size: cover; /* Adjust as needed */
+    width: 100%; /* Adjust as needed */
+    height: 300px; /* Adjust as needed */
+  }
