@@ -2,7 +2,7 @@
     position: relative;
   }
   
-  #rocks {
+  #snowTerain {
     background-image: url('images/snowTerain.png');
     background-size: cover; /* Adjust as needed */
     width: 100%; /* Adjust as needed */
