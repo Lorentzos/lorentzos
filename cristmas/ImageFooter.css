@@ -1,8 +1,8 @@
-#bottom-of-site {
+.bottom-of-site {
     position: relative;
   }
   
-  #snowTerain {
+  .snowTerain {
     background-image: url('images/snowTerain.png');
     background-size: cover; /* Adjust as needed */
     width: 100%; /* Adjust as needed */
