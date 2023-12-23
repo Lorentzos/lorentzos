@@ -12,59 +12,79 @@
 			<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 			<style type="text/css">
 				body {
-					font-family: Helvetica, Arial, sans-serif;
-					font-size: 13px;
-					color: #545353;
-				}
-				table {
-					border: none;
-					border-collapse: collapse;
-				}
-				#sitemap tr:nth-child(odd) td {
-					background-color: #eee !important;
-				}
-				#sitemap tbody tr:hover td {
-					background-color: #ccc;
-				}
-				#sitemap tbody tr:hover td, #sitemap tbody tr:hover td a {
-					color: #000;
-				}
-				#content {
-					margin: 0 auto;
-					width: 1000px;
-				}
-				.expl {
-					margin: 18px 3px;
-					line-height: 1.2em;
-				}
-				.expl a {
-					color: #da3114;
-					font-weight: 600;
-				}
-				.expl a:visited {
-					color: #da3114;
-				}
-				a {
-					color: #000;
-					text-decoration: none;
-				}
-				a:visited {
-					color: #777;
-				}
-				a:hover {
-					text-decoration: underline;
-				}
-				td {
-					font-size:11px;
-				}
-				th {
-					text-align:left;
-					padding-right:30px;
-					font-size:11px;
-				}
-				thead th {
-					border-bottom: 1px solid #000;
-				}
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 14px;
+    color: #545353;
+}
+
+table {
+    border: none;
+    border-collapse: collapse;
+}
+
+#sitemap tr:nth-child(odd) td {
+    background-color: #f4f4f4 !important;
+}
+
+#sitemap tbody tr:hover td {
+    background-color: #e0e0e0;
+}
+
+#sitemap tbody tr:hover td, #sitemap tbody tr:hover td a {
+    color: #000;
+    transition: color 0.3s ease;
+}
+
+#content {
+    margin: 0 auto;
+    max-width: 1000px;
+    padding: 20px;
+    text-align: center; /* Added to center content */
+}
+
+.expl {
+    margin: 18px 3px;
+    line-height: 1.4em;
+}
+
+.expl a {
+    color: #e44d26;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.expl a:visited {
+    color: #e44d26;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:visited {
+    color: #777;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+td {
+    font-size: 12px;
+}
+
+th {
+    text-align: left;
+    padding-right: 20px;
+    font-size: 12px;
+}
+
+thead th {
+    border-bottom: 1px solid #333;
+}
+
 			</style>
 		</head>
 		<body>
