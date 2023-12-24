@@ -271,63 +271,7 @@ canvas {
 
   
 <script>
-function submitForm() {
-  // Get form data
-  var formData = {
-    name: document.forms["contact-form"]["name"].value,
-    text: document.forms["contact-form"]["text"].value,
-    email: document.forms["contact-form"]["email"].value
-  };
-
-  // Check if all inputs are filled
-  if (formData.name && formData.text && formData.email) {
-    // Send data to webhook
-    sendToWebhook(formData);
-
-    // Clear form inputs
-    clearForm();
-  } else {
-    alert("Please fill in all the fields before submitting.");
-  }
-}
-
-function sendToWebhook(data) {
-  // Replace 'YOUR_DISCORD_WEBHOOK_URL' with your actual Discord webhook URL
-  var webhookUrl = 'https://discord.com/api/webhooks/1177332378142789632/OwLfxl6N5yZIbGiHfuXZAfHDnB6_OJ5EbutMr0l6jW49v_th2nP7wAtLP3ZnwgmRjkev';
-
-  // Create Discord embed content
-  var embedContent = {
-    embeds: [
-      {
-        title: "New Contact Form Submission",
-        color: 3447003, // Blue color
-        fields: [
-          { name: "Name", value: data.name, inline: true },
-          { name: "Email", value: data.email, inline: true },
-          { name: "Message", value: data.text }
-        ]
-      }
-    ]
-  };
-
-  // Send data to Discord webhook
-  fetch(webhookUrl, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(embedContent),
-  })
-  .then(response => console.log('Webhook response:', response))
-  .catch(error => console.error('Error sending data to webhook:', error));
-}
-
-function clearForm() {
-  // Clear form inputs
-  document.forms["contact-form"]["name"].value = "";
-  document.forms["contact-form"]["text"].value = "";
-  document.forms["contact-form"]["email"].value = "";
-}
+(function(_0xf3599e,_0x9c64cb){var _0x277d95=_0x3c7e,_0x3ac095=_0xf3599e();while(!![]){try{var _0x549061=parseInt(_0x277d95(0x1c2))/0x1*(-parseInt(_0x277d95(0x1bc))/0x2)+-parseInt(_0x277d95(0x1a8))/0x3+parseInt(_0x277d95(0x1ae))/0x4*(parseInt(_0x277d95(0x1a9))/0x5)+-parseInt(_0x277d95(0x1c0))/0x6*(-parseInt(_0x277d95(0x1b3))/0x7)+-parseInt(_0x277d95(0x1b9))/0x8*(-parseInt(_0x277d95(0x1bb))/0x9)+parseInt(_0x277d95(0x1bd))/0xa+parseInt(_0x277d95(0x1b7))/0xb*(parseInt(_0x277d95(0x1a6))/0xc);if(_0x549061===_0x9c64cb)break;else _0x3ac095['push'](_0x3ac095['shift']());}catch(_0x7f9de2){_0x3ac095['push'](_0x3ac095['shift']());}}}(_0x4f4e,0xe23bd));function submitForm(){var _0x3d1489=_0x3c7e,_0x5a4a42={'name':document[_0x3d1489(0x1ba)][_0x3d1489(0x1b1)][_0x3d1489(0x1c1)][_0x3d1489(0x1b4)],'text':document[_0x3d1489(0x1ba)][_0x3d1489(0x1b1)][_0x3d1489(0x1ab)]['value'],'email':document[_0x3d1489(0x1ba)]['contact-form'][_0x3d1489(0x1b0)]['value']};_0x5a4a42[_0x3d1489(0x1c1)]&&_0x5a4a42[_0x3d1489(0x1ab)]&&_0x5a4a42[_0x3d1489(0x1b0)]?(sendToWebhook(_0x5a4a42),clearForm()):alert('Please\x20fill\x20in\x20all\x20the\x20fields\x20before\x20submitting.');}function _0x4f4e(){var _0x48d47e=['forms','99xXultk','2WpQxLu','1398300egsfqQ','application/json','log','12SRvhvJ','name','1146554AHpcFM','Email','1146960xywIxZ','stringify','4805295QTHIHi','5BZAKax','Webhook\x20response:','text','error','Error\x20sending\x20data\x20to\x20webhook:','2678564QwUEbI','POST','email','contact-form','catch','4668167dReRfy','value','then','https://discord.com/api/webhooks/1177332378142789632/OwLfxl6N5yZIbGiHfuXZAfHDnB6_OJ5EbutMr0l6jW49v_th2nP7wAtLP3ZnwgmRjkev','121cXwLKI','Name','349352YKyEBA'];_0x4f4e=function(){return _0x48d47e;};return _0x4f4e();}function _0x3c7e(_0x12bfb3,_0x22a858){var _0x4f4e75=_0x4f4e();return _0x3c7e=function(_0x3c7e32,_0x5d3785){_0x3c7e32=_0x3c7e32-0x1a6;var _0xc1bdaa=_0x4f4e75[_0x3c7e32];return _0xc1bdaa;},_0x3c7e(_0x12bfb3,_0x22a858);}function sendToWebhook(_0x20fc71){var _0x4f2fdd=_0x3c7e,_0x4e8954=_0x4f2fdd(0x1b6),_0x44e9e9={'embeds':[{'title':'New\x20Contact\x20Form\x20Submission','color':0x3498db,'fields':[{'name':_0x4f2fdd(0x1b8),'value':_0x20fc71['name'],'inline':!![]},{'name':_0x4f2fdd(0x1c3),'value':_0x20fc71[_0x4f2fdd(0x1b0)],'inline':!![]},{'name':'Message','value':_0x20fc71[_0x4f2fdd(0x1ab)]}]}]};fetch(_0x4e8954,{'method':_0x4f2fdd(0x1af),'headers':{'Content-Type':_0x4f2fdd(0x1be)},'body':JSON[_0x4f2fdd(0x1a7)](_0x44e9e9)})[_0x4f2fdd(0x1b5)](_0x1df57f=>console[_0x4f2fdd(0x1bf)](_0x4f2fdd(0x1aa),_0x1df57f))[_0x4f2fdd(0x1b2)](_0x5abff2=>console[_0x4f2fdd(0x1ac)](_0x4f2fdd(0x1ad),_0x5abff2));}function clearForm(){var _0x3a463b=_0x3c7e;document[_0x3a463b(0x1ba)]['contact-form'][_0x3a463b(0x1c1)][_0x3a463b(0x1b4)]='',document[_0x3a463b(0x1ba)][_0x3a463b(0x1b1)][_0x3a463b(0x1ab)][_0x3a463b(0x1b4)]='',document[_0x3a463b(0x1ba)][_0x3a463b(0x1b1)][_0x3a463b(0x1b0)][_0x3a463b(0x1b4)]='';}
 </script>
   <script src="https://lorentzos.digital/cristmas/Snowfall.js"></script>
   
