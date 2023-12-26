@@ -1,32 +1,305 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Lorentzos</title>
-<meta property="og:title" content="Lorentzos">
-<meta property="og:description" content="Lorentzos Landing Page">
-<meta property="og:image" content="https://lorentzos.digital/images/logoBlue.png">
-<meta property="og:url" content="https://lorentzos.digital">
-<meta name="keywords" content="Lorentzos, lorentzos">
-<meta name="author" content="Lorentzos">
-<meta name="description" content="Lorentzos Landing Page">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" href="https://lorentzos.digital/images/logo.png" type="https://lorentzos.digital/images/logo.png">
-<link rel="shortcut icon" href="https://lorentzos.digital/images/logo.png" type="https://lorentzos.digital/images/logo.png">
-<link rel="stylesheet" href="https://lorentzos.digital/calculator/distance/styles.css">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-</head>
-    
-<body>
-    <div class="result">
-        Distance (in meters):
-        <!-- displaying the distance here: -->
-        <span id="length"></span>
-    </div>
-    <div id="map"></div>
 
+<head>
+    <meta charset="UTF-8">
+    <title>Lorentzos</title>
+    <meta property="og:title" content="Lorentzos">
+    <meta property="og:description" content="Lorentzos Landing Page">
+    <meta property="og:image" content="https://lorentzos.digital/images/logoBlue.png">
+    <meta property="og:url" content="https://lorentzos.digital">
+    <meta name="keywords" content="Lorentzos, lorentzos">
+    <meta name="author" content="Lorentzos">
+    <meta name="description" content="Lorentzos Landing Page">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="https://lorentzos.digital/images/logo.png" type="https://lorentzos.digital/images/logo.png">
+    <link rel="shortcut icon" href="https://lorentzos.digital/images/logo.png" type="https://lorentzos.digital/images/logo.png">
+    <link rel="stylesheet" href="https://lorentzos.digital/calculator/distance/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <style>
+        body {
+            color: #333;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 90%;
+            margin: 20px auto;
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h3 {
+            color: #007bff;
+        }
+
+        label {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        select {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 8px;
+            border-radius: 4px;
+            width: 12%;
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        select::-ms-expand {
+            display: none;
+        }
+
+        select::after {
+            content: '\25BC';
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            font-size: 16px;
+            color: #555;
+        }
+
+        select:hover,
+        select:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        #map {
+            width: 100%;
+            height: 450px;
+            margin: 20px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+
+        .result.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        #travel-info {
+            font-weight: bold;
+            color: #28a745;
+        }
+
+        /* Responsive media queries */
+
+        @media (min-width: 768px) {
+            .container {
+                max-width: 70%;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .container {
+                max-width: 60%;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 50%;
+            }
+        }
+
+        .card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s;
+  cursor: pointer;
+  margin: 10px auto;
+  width: 100%; /* Adjusted for responsiveness */
+  max-width: 300px; /* Added for responsiveness */
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+  border-bottom: 1px solid #ddd;
+}
+
+
+.card h2 {
+  padding: 15px;
+  color: #333;
+  margin: 0;
+  text-align: center;
+}
+
+.content-top-border {
+  height: 5px;
+  background-color: #3498db;
+  animation: borderAnimation 2s infinite alternate;
+}
+
+@keyframes borderAnimation {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+    </style>
+</head>
+
+<body>
+    <div class="container">
+      <div class="card" onclick="location.href='https://lorentzos.digital';">
+              <caption class="caption-main"><img class="logo" src="https://lorentzos.digital/images/logoBlue.png"/>
+                <div class="content-top-border"></div>
+                </caption>
+      </div>
+      <div class="card">
+        <h3>Travel Time and Distance Calculator</h3>
+      </div>
+        <div>
+          <label for="travel-mode">Select travel mode:</label>
+          <select id="travel-mode" required>
+              <option value="" disabled selected>Select Travel Mode</option>
+              <option value="driving-car">Car</option>
+              <option value="foot-walking">Foot</option>
+          </select>
+      </div>
+      <div>
+          <label for="result-type">Select result type:</label>
+          <select id="result-type" required>
+              <option value="" disabled selected>Select Result Type</option>
+              <option value="distance">Distance (km)</option>
+              <option value="time">Time</option>
+          </select>
+      </div>
+      
+        <div id="map"></div>
+        <div class="result">
+            <strong id="travel-info"></strong>
+        </div>
+    </div>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="https://unpkg.com/leaflet-geometryutil@0.9.0/dist/leaflet.geometryutil.js"></script>
-    <script src="script.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+// Map configuration
+const mapOptions = {
+    center: [39.0742, 21.8243], // Centered on Greece
+    zoom: 7
+};
+
+const map = L.map('map', mapOptions);
+const layer = new L.TileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+map.addLayer(layer);
+
+let firstLatLng,
+    secondLatLng,
+    polyline,
+    markerA = null,
+    markerB = null;
+
+// Event listener for map clicks
+map.on('click', async (e) => {
+    if (!firstLatLng) {
+        // First click, set Point A marker
+        firstLatLng = e.latlng;
+        markerA = L.marker(firstLatLng).addTo(map).bindPopup('Point A<br/>' + e.latlng).openPopup();
+    } else if (!secondLatLng) {
+        // Second click, set Point B marker and calculate distance or time
+        secondLatLng = e.latlng;
+        markerB = L.marker(secondLatLng).addTo(map).bindPopup('Point B<br/>' + e.latlng).openPopup();
+        polyline = L.polyline([firstLatLng, secondLatLng], { color: 'red' });
+        polyline.addTo(map);
+
+        updateResult(); // Calculate and update result when both locations are selected
+    } else {
+        // Third click, reset markers and polyline
+        if (polyline) {
+            map.removeLayer(polyline);
+            polyline = null;
+        }
+        firstLatLng = e.latlng;
+        map.removeLayer(markerA);
+        map.removeLayer(markerB);
+        secondLatLng = null;
+        markerA = L.marker(firstLatLng).addTo(map).bindPopup('Point A<br/>' + e.latlng).openPopup();
+    }
+});
+
+// Event listener for travel mode selection
+document.getElementById('travel-mode').addEventListener('change', async () => {
+    updateResult(); // Update result when travel mode is changed
+});
+
+// Event listener for result type selection
+document.getElementById('result-type').addEventListener('change', async () => {
+    updateResult(); // Update result when result type is changed
+});
+
+// Function to calculate and update the result
+async function updateResult() {
+    if (firstLatLng && secondLatLng) {
+        const selectedMode = document.getElementById('travel-mode').value;
+        const selectedResultType = document.getElementById('result-type').value;
+
+        try {
+            // Call OpenRouteService API for directions
+            const response = await axios.get(`https://api.openrouteservice.org/v2/directions/${selectedMode}?api_key=5b3ce3597851110001cf6248559d7da49504463880dd4785f4aa3478&start=${firstLatLng.lng},${firstLatLng.lat}&end=${secondLatLng.lng},${secondLatLng.lat}`);
+            console.log('OpenRouteService API Response:', response);
+
+            if (selectedResultType === 'distance') {
+                // Calculate and display distance
+                const totalDistance = response.data.features[0].properties.segments[0].distance / 1000; // Convert to kilometers
+                document.getElementById('travel-info').innerHTML = `Estimated Distance: ${totalDistance.toFixed(2)} km`;
+            } else if (selectedResultType === 'time') {
+                // Calculate and display time
+                const totalDuration = response.data.features[0].properties.segments[0].duration; // Total duration in seconds
+                const hours = Math.floor(totalDuration / 3600);
+                const minutes = Math.floor((totalDuration % 3600) / 60);
+                const seconds = totalDuration % 60;
+                document.getElementById('travel-info').innerHTML = `Estimated Time: ${hours} hours ${minutes} minutes ${seconds} seconds`;
+            }
+
+            // Show result container
+            document.querySelector('.result').classList.add('show');
+        } catch (error) {
+            console.error('Error fetching travel information:', error);
+            document.getElementById('travel-info').innerHTML = 'Error fetching travel information';
+            document.querySelector('.result').classList.add('show');
+        }
+    }
+}
+
+
+
+    </script>
 </body>
+
 </html>
