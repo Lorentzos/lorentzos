@@ -61,5 +61,8 @@
       <url>
         <loc>https://lorentzos.digital/calculator/distance/map</loc>
         <lastmod>2023-12-23T22:30:00+00:00</lastmod>
+                  <image:image>
+            <image:loc>https://lorentzos.digital/images/logoBlue.png</image:loc>
+        </image:image>
     </url>
 </urlset>
