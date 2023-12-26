@@ -1,8 +1,65 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="https://lorentzos.digital/main-sitemap.xsl"?>
-<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <sitemap>
-        <loc>https://lorentzos.digital/page-sitemap.xml</loc>
-      <lastmod>2023-12-23T22:30:00+00:00</lastmod>
-    </sitemap>
-</sitemapindex>
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<!--  created with sitemap generator https://octopus.do  -->
+
+    <url>
+        <loc>https://lorentzos.digital</loc>
+        <lastmod>2023-12-26</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://lorentzos.digital/calculator</loc>
+        <lastmod>2023-12-26</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://lorentzos.digital/calculator/distance</loc>
+        <lastmod>2023-12-26</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://lorentzos.digital/calculator/distance/map</loc>
+        <lastmod>2023-12-26</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://lorentzos.digital/thassos</loc>
+        <lastmod>2023-12-26</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://lorentzos.digital/thassos/itineraries</loc>
+        <lastmod>2023-12-26</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://lorentzos.digital/generate</loc>
+        <lastmod>2023-12-26</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://lorentzos.digital/generate/qrcode</loc>
+        <lastmod>2023-12-26</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://lorentzos.digital/js</loc>
+        <lastmod>2023-12-26</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://lorentzos.digital/js/obfuscate</loc>
+        <lastmod>2023-12-26</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.5</priority>
+    </url>
+</urlset>
