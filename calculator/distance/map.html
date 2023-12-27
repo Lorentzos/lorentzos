@@ -180,8 +180,9 @@
                 <div class="content-top-border"></div>
                 </caption>
       </div>
-      <div class="card">
-        <h3>Travel Time and Distance Calculator</h3>
+      <div id="map"></div>
+      <div class="result">
+          <strong id="travel-info"></strong>
       </div>
         <div>
           <label for="travel-mode">Select travel mode:</label>
@@ -200,103 +201,14 @@
           </select>
       </div>
       
-        <div id="map"></div>
-        <div class="result">
-            <strong id="travel-info"></strong>
-        </div>
+ 
     </div>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="https://unpkg.com/leaflet-geometryutil@0.9.0/dist/leaflet.geometryutil.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
-// Map configuration
-const mapOptions = {
-    center: [39.0742, 21.8243], // Centered on Greece
-    zoom: 7
-};
 
-const map = L.map('map', mapOptions);
-const layer = new L.TileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
-map.addLayer(layer);
-
-let firstLatLng,
-    secondLatLng,
-    polyline,
-    markerA = null,
-    markerB = null;
-
-// Event listener for map clicks
-map.on('click', async (e) => {
-    if (!firstLatLng) {
-        // First click, set Point A marker
-        firstLatLng = e.latlng;
-        markerA = L.marker(firstLatLng).addTo(map).bindPopup('Point A<br/>' + e.latlng).openPopup();
-    } else if (!secondLatLng) {
-        // Second click, set Point B marker and calculate distance or time
-        secondLatLng = e.latlng;
-        markerB = L.marker(secondLatLng).addTo(map).bindPopup('Point B<br/>' + e.latlng).openPopup();
-        polyline = L.polyline([firstLatLng, secondLatLng], { color: 'red' });
-        polyline.addTo(map);
-
-        updateResult(); // Calculate and update result when both locations are selected
-    } else {
-        // Third click, reset markers and polyline
-        if (polyline) {
-            map.removeLayer(polyline);
-            polyline = null;
-        }
-        firstLatLng = e.latlng;
-        map.removeLayer(markerA);
-        map.removeLayer(markerB);
-        secondLatLng = null;
-        markerA = L.marker(firstLatLng).addTo(map).bindPopup('Point A<br/>' + e.latlng).openPopup();
-    }
-});
-
-// Event listener for travel mode selection
-document.getElementById('travel-mode').addEventListener('change', async () => {
-    updateResult(); // Update result when travel mode is changed
-});
-
-// Event listener for result type selection
-document.getElementById('result-type').addEventListener('change', async () => {
-    updateResult(); // Update result when result type is changed
-});
-
-// Function to calculate and update the result
-async function updateResult() {
-    if (firstLatLng && secondLatLng) {
-        const selectedMode = document.getElementById('travel-mode').value;
-        const selectedResultType = document.getElementById('result-type').value;
-
-        try {
-            // Call OpenRouteService API for directions
-            const response = await axios.get(`https://api.openrouteservice.org/v2/directions/${selectedMode}?api_key=5b3ce3597851110001cf6248559d7da49504463880dd4785f4aa3478&start=${firstLatLng.lng},${firstLatLng.lat}&end=${secondLatLng.lng},${secondLatLng.lat}`);
-            console.log('OpenRouteService API Response:', response);
-
-            if (selectedResultType === 'distance') {
-                // Calculate and display distance
-                const totalDistance = response.data.features[0].properties.segments[0].distance / 1000; // Convert to kilometers
-                document.getElementById('travel-info').innerHTML = `Estimated Distance: ${totalDistance.toFixed(2)} km`;
-            } else if (selectedResultType === 'time') {
-                // Calculate and display time
-                const totalDuration = response.data.features[0].properties.segments[0].duration; // Total duration in seconds
-                const hours = Math.floor(totalDuration / 3600);
-                const minutes = Math.floor((totalDuration % 3600) / 60);
-                const seconds = totalDuration % 60;
-                document.getElementById('travel-info').innerHTML = `Estimated Time: ${hours} hours ${minutes} minutes ${seconds} seconds`;
-            }
-
-            // Show result container
-            document.querySelector('.result').classList.add('show');
-        } catch (error) {
-            console.error('Error fetching travel information:', error);
-            document.getElementById('travel-info').innerHTML = 'Error fetching travel information';
-            document.querySelector('.result').classList.add('show');
-        }
-    }
-}
-
+const _0x199bb6=_0x522e;function _0x522e(_0x3ad497,_0x2bb50f){const _0x5ec396=_0x5ec3();return _0x522e=function(_0x522ebb,_0x5966f8){_0x522ebb=_0x522ebb-0x10f;let _0xcf5433=_0x5ec396[_0x522ebb];return _0xcf5433;},_0x522e(_0x3ad497,_0x2bb50f);}(function(_0x49114d,_0x5eb553){const _0x5931c6=_0x522e,_0x2bd80f=_0x49114d();while(!![]){try{const _0x48159f=parseInt(_0x5931c6(0x13d))/0x1+parseInt(_0x5931c6(0x143))/0x2+-parseInt(_0x5931c6(0x147))/0x3*(-parseInt(_0x5931c6(0x114))/0x4)+-parseInt(_0x5931c6(0x12e))/0x5*(parseInt(_0x5931c6(0x148))/0x6)+parseInt(_0x5931c6(0x11a))/0x7*(parseInt(_0x5931c6(0x121))/0x8)+parseInt(_0x5931c6(0x12c))/0x9+parseInt(_0x5931c6(0x120))/0xa*(-parseInt(_0x5931c6(0x12a))/0xb);if(_0x48159f===_0x5eb553)break;else _0x2bd80f['push'](_0x2bd80f['shift']());}catch(_0x124337){_0x2bd80f['push'](_0x2bd80f['shift']());}}}(_0x5ec3,0xed10e));const mapOptions={'center':[39.0742,21.8243],'zoom':0x7},map=L[_0x199bb6(0x11f)](_0x199bb6(0x11f),mapOptions),layer=new L['TileLayer'](_0x199bb6(0x12f));function _0x5ec3(){const _0x15dc6a=['\x20hours\x20','&end=','classList','distance','log','4ZAZUNH','floor','click','Estimated\x20Distance:\x20','change','https://api.openrouteservice.org/v2/directions/','305060qxKeTx','Error\x20fetching\x20travel\x20information','OpenRouteService\x20API\x20Response:','bindPopup','latlng','map','40IKmFZR','8YbcXZD','.result','innerHTML','\x20km','value','lng','add','Estimated\x20Time:\x20','Point\x20B<br/>','8652446cEFyrX','Point\x20A<br/>','14297616GVFSQm','features','2920KMFwjb','https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png','openPopup','time','removeLayer','travel-info','duration','polyline','getElementById','querySelector','Error\x20fetching\x20travel\x20information:','get','show','addTo','addLayer','1519462dIPcse','\x20seconds','marker','segments','travel-mode','result-type','1731778VNoYNs','lat','data','red','5553681PqzArL','17994gNgcGh'];_0x5ec3=function(){return _0x15dc6a;};return _0x5ec3();}map[_0x199bb6(0x13c)](layer);let firstLatLng,secondLatLng,polyline,markerA=null,markerB=null;map['on'](_0x199bb6(0x116),async _0x5b846f=>{const _0x753ae7=_0x199bb6;if(!firstLatLng)firstLatLng=_0x5b846f[_0x753ae7(0x11e)],markerA=L['marker'](firstLatLng)[_0x753ae7(0x13b)](map)[_0x753ae7(0x11d)](_0x753ae7(0x12b)+_0x5b846f[_0x753ae7(0x11e)])[_0x753ae7(0x130)]();else!secondLatLng?(secondLatLng=_0x5b846f[_0x753ae7(0x11e)],markerB=L[_0x753ae7(0x13f)](secondLatLng)[_0x753ae7(0x13b)](map)[_0x753ae7(0x11d)](_0x753ae7(0x129)+_0x5b846f['latlng'])['openPopup'](),polyline=L[_0x753ae7(0x135)]([firstLatLng,secondLatLng],{'color':_0x753ae7(0x146)}),polyline[_0x753ae7(0x13b)](map),updateResult()):(polyline&&(map[_0x753ae7(0x132)](polyline),polyline=null),firstLatLng=_0x5b846f[_0x753ae7(0x11e)],map['removeLayer'](markerA),map[_0x753ae7(0x132)](markerB),secondLatLng=null,markerA=L[_0x753ae7(0x13f)](firstLatLng)[_0x753ae7(0x13b)](map)[_0x753ae7(0x11d)]('Point\x20A<br/>'+_0x5b846f[_0x753ae7(0x11e)])[_0x753ae7(0x130)]());}),document[_0x199bb6(0x136)]('travel-mode')['addEventListener'](_0x199bb6(0x118),async()=>{updateResult();}),document[_0x199bb6(0x136)](_0x199bb6(0x142))['addEventListener'](_0x199bb6(0x118),async()=>{updateResult();});async function updateResult(){const _0x382e30=_0x199bb6;if(firstLatLng&&secondLatLng){const _0x22bd91=document[_0x382e30(0x136)](_0x382e30(0x141))[_0x382e30(0x125)],_0x3a1235=document[_0x382e30(0x136)](_0x382e30(0x142))['value'];try{const _0x5b8b86=await axios[_0x382e30(0x139)](_0x382e30(0x119)+_0x22bd91+'?api_key=5b3ce3597851110001cf6248559d7da49504463880dd4785f4aa3478&start='+firstLatLng[_0x382e30(0x126)]+','+firstLatLng['lat']+_0x382e30(0x110)+secondLatLng[_0x382e30(0x126)]+','+secondLatLng[_0x382e30(0x144)]);console[_0x382e30(0x113)](_0x382e30(0x11c),_0x5b8b86);if(_0x3a1235===_0x382e30(0x112)){const _0x4d365c=_0x5b8b86[_0x382e30(0x145)]['features'][0x0]['properties'][_0x382e30(0x140)][0x0][_0x382e30(0x112)]/0x3e8;document[_0x382e30(0x136)](_0x382e30(0x133))['innerHTML']=_0x382e30(0x117)+_0x4d365c['toFixed'](0x2)+_0x382e30(0x124);}else{if(_0x3a1235===_0x382e30(0x131)){const _0xf05aea=_0x5b8b86['data'][_0x382e30(0x12d)][0x0]['properties']['segments'][0x0][_0x382e30(0x134)],_0x370dad=Math[_0x382e30(0x115)](_0xf05aea/0xe10),_0x4fd015=Math[_0x382e30(0x115)](_0xf05aea%0xe10/0x3c),_0x2dfc9d=_0xf05aea%0x3c;document[_0x382e30(0x136)](_0x382e30(0x133))[_0x382e30(0x123)]=_0x382e30(0x128)+_0x370dad+_0x382e30(0x10f)+_0x4fd015+'\x20minutes\x20'+_0x2dfc9d+_0x382e30(0x13e);}}document[_0x382e30(0x137)](_0x382e30(0x122))[_0x382e30(0x111)][_0x382e30(0x127)]('show');}catch(_0x25ad91){console['error'](_0x382e30(0x138),_0x25ad91),document[_0x382e30(0x136)](_0x382e30(0x133))[_0x382e30(0x123)]=_0x382e30(0x11b),document[_0x382e30(0x137)](_0x382e30(0x122))[_0x382e30(0x111)][_0x382e30(0x127)](_0x382e30(0x13a));}}}
 
 
     </script>
