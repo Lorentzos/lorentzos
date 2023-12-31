@@ -1,11 +1,12 @@
-const a = fetch;
-const b = "https://lorentzos.digital/amount.txt";
-const c = "then";
-const d = "response";
-const e = "amount";
-const f = document.getElementById("getAmountFromServer");
-const g = "innerHTML";
-const h = "text";
-const i = "catch";
-const x = "error";
-const l = console;
+{
+  "a": "fetch",
+  "b": "https://lorentzos.digital/amount.txt",
+  "c": "then",
+  "d": "response",
+  "e": "amount",
+  "f": "getAmountFromServer",
+  "g": "innerHTML",
+  "h": "text",
+  "i": "catch",
+  "x": "error"
+}
