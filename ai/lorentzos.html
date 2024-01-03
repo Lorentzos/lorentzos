@@ -2,7 +2,7 @@
 <html lang="el">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Lorentzos AI</title>
 <meta property="og:title" content="Lorentzos">
 <meta property="og:description" content="Lorentzos Landing Page">
@@ -212,7 +212,11 @@ body {
     }
 }
 
-
+@media (max-width: 768px) {
+    #message-input:focus {
+        font-size: 16px; /* Adjust the font size on focus */
+    }
+}
 
     </style>
 </head>
