@@ -257,6 +257,19 @@ h2 ,a {
     max-width:700px;
     margin:auto
 }
+
+.ai-section{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    background-color:rgba(42, 50, 70, 0);
+    border-radius:11px;
+    padding:35px 0 60px;
+    max-width:700px;
+    margin:auto
+}
+
 @media(max-width:768px){
     .contact-section{
         border-radius:0;
@@ -356,6 +369,15 @@ h2 ,a {
     margin-top:110px;
     margin-bottom:200px
 }
+.ai-container{
+    margin-top:110px;
+    margin-bottom:200px
+}
+@media only screen and (max-width: 767px) {
+    .ai-container {
+      display: none; /* Hide the container on small screens */
+    }
+  }
 .stripes{
     width:-moz-fit-content;
     width:fit-content;
