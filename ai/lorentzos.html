@@ -182,39 +182,17 @@ body {
     fill: #fff;
 }
 
+/* Adjust input font size for mobile */
 @media (max-width: 768px) {
-    .user-message,
-    .bot-message {
-        max-width: 90%;
-    }
-
     #message-input {
-        width: 80%;
-    }
-
-    #send-button {
-        margin-left: 4px;
+        font-size: 14px;
     }
 }
 
-@media (max-width: 480px) {
-    .user-message,
-    .bot-message {
-        max-width: 100%;
-    }
-
-    #message-input {
-        width: 100%;
-    }
-
-    #send-button {
-        margin-left: 0;
-    }
-}
-
+/* Reset zoom on input focus for mobile */
 @media (max-width: 768px) {
     #message-input:focus {
-        font-size: 16px; /* Adjust the font size on focus */
+        font-size: 15px;
     }
 }
 
