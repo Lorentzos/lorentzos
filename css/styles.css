@@ -415,9 +415,9 @@ h2 ,a {
  }
 }
 .media-container{
-    display:flex;
+
     position:relative;
-    z-index:1
+
 }
 .contact-container{
     margin-top:110px;
@@ -483,17 +483,7 @@ h2 ,a {
  }
 }
 
-.blob{
-    position:absolute;
-    left:50%;
-    top:50%;
-    transform:translate(-60%,-50%);
-    height:40vh;
-    width:40vh;
-    background-image:radial-gradient(circle at 50% 50%,#b74f92 0,rgba(15,23,43,0) 70%);
-    z-index:-1;
-    animation:Home_breathing 5s ease-out infinite normal
-}
+
 @keyframes Home_breathing{
     0%{
         transform:scale(1) translate(-60%,-50%);
