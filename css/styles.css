@@ -139,22 +139,9 @@ body:after{
 
 
 
-.main-content{
-    font-family:__Sofia_Sans_0ea23e;
-    font-style:normal
-}
 
-.header-nav{
-    padding-top:30px
-}
-@media(max-width:768px){
-    .header-nav{
-        padding:20px 14px
-    }
-    h2 ,a {
-        color: #ffffff;
- }
-}
+
+
 .header_icon__9XZdW{
     border:none!important
 }
@@ -321,7 +308,6 @@ h2 ,a {
 
 @media(max-width:768px){
     .contact-section{
-        border-radius:0;
         padding:35px 30px 60px
     }
     h2 ,a {
@@ -396,9 +382,7 @@ h2 ,a {
     margin-top:30px;
     padding-bottom:20px
 }
-.home-container{
-    min-height:100vh
-}
+
 .hero-container{
     margin-top:84px;
     margin-bottom:154px
@@ -424,8 +408,7 @@ h2 ,a {
     margin-bottom:200px
 }
 .ai-container{
-    margin-top:110px;
-    margin-bottom:200px
+ overflow: hidden;
 }
 @media only screen and (max-width: 767px) {
     .ai-container {
