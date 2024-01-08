@@ -58,21 +58,6 @@ h5 {
   margin-bottom: 0;
 }
 
-.content-top-border,
-.content-bottom-border {
-  height: 5px;
-  background-color: #3498db;
-  animation: borderAnimation 2s infinite alternate;
-}
-
-@keyframes borderAnimation {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 100%;
-  }
-}
 
 
 
@@ -82,13 +67,19 @@ h5 {
 }
 
 .card {
-  background-color: #1b2744;
+
+
+  outline: none;
+    background-color: #192646;
+    transition: all 0.3s ease;
+    border: 4px solid #243355; 
+    border-radius: 30px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.3s;
   cursor: pointer;
-  margin: 10px auto;
+
   width: 100%; 
   max-width: 300px; 
 }
@@ -101,7 +92,6 @@ h5 {
   width: 100%;
   height: 150px;
   object-fit: contain;
-  border-bottom: 1px solid #ddd;
 }
 
 
@@ -126,40 +116,35 @@ canvas {
     outline: none;
     background-color: #192646;
     transition: all 0.3s ease;
-    border-radius: 10px;
     border: 4px solid #243355; 
     border-radius: 30px;
 }
 
 </style>
 <body>
-  <div>
-    <main class="main-content">
-      <div class="home-container" id="home">
-        <nav class="header-nav navbar navbar-expand-md navbar-light">
-          <div class="container"></div>
-        </nav>
+  <div class="container">
+    <br><br>
+    <div class="row">
+      <section class="ai-section">
+        <div class="card" onclick="location.href='https://lorentzos.digital';">
+          <img class="logo" src="images/logo.png" alt="Lorentzos Digital Logo">
+        </div>
+        <br>
+        <div class="ai-container">
+          <h4 class="ai-info-text">Ρωτήστε τον ψηφιακό βοηθό του <a href="http://lorentzos.digital">lorentzos.digital</a></h4>
+        </div>
+        <div class="ai-container">
+          <iframe src="https://lorentzos.digital/ai/lorentzos" frameborder="0" allowfullscreen width="1100" height="600"
+            style="border: 4px solid #243355; border-radius: 30px;"></iframe>
+          <img alt="lorentzos stripes" src="https://lorentzos.digital/images/bg_stripesNormal.svg" width="220"
+            height="240" decoding="async" data-nimg="1" class="stripe3" style="color:transparent" draggable="false">
+        </div>
+      </section>
+    </div>
   
-        <div class="container">
-          <div class="hero-container row">
-            <section class="hero-section">
-              <div class="card" onclick="location.href='https://lorentzos.digital';">
-                <img class="logo" src="images/logo.png"/>
-                <div class="content-top-border"></div>
-              </div>
-            </section>
-  
-            <div class="ai-container row">
-              <section class="ai-section">
-                <h4 class="ai-info-text">Ρωτήστε τον ψηφιακό βοηθό του <a href="http://lorentzos.digital">lorentzos.digital</a></h4>
-                <iframe src="https://lorentzos.digital/ai/lorentzos" frameborder="0" allowfullscreen width="1100" height="600" style="border: 4px solid #243355; border-radius: 30px;"></iframe>
-                <img alt="lorentzos stripes" src="https://lorentzos.digital/images/bg_stripesNormal.svg" width="220" height="240" decoding="async" data-nimg="1" class="stripe3" style="color:transparent" draggable="false">
-              </section>
-              
-            </div>
-  
-            <div class="media-container">
-              <div class="row">
+           <div class="media-container">
+      <br><br>
+      <div class="row">
 
               <img alt="lorentzos stripes" src="https://lorentzos.digital/images/bg_stripesNormal.svg" width="220" height="240" decoding="async" data-nimg="1" class="stripe2" style="color:transparent" draggable="false">
               <div class="media-section col-xxl-3 col-md-6 col-sm-12">
@@ -292,28 +277,28 @@ canvas {
   
             </div>
           </div>
-        </div>
+
+
+          
         
-          <div id="contact" class="contact-container row">
-            <section class="contact-section">
-              <h2 class="contact-header">Contact Me</h2>
-              <form id="contact-form" class="contact-form" name="contact-form">
-                <img alt="lorentzos stripes" src="https://lorentzos.digital/images/bg_stripesNormal.svg" width="220" height="240" decoding="async" data-nimg="1" class="stripe3" style="color:transparent" draggable="false">
-                <input name="name" placeholder="Name" type="text" class="contact-input form-control">
-                <textarea name="text" placeholder="Write me..." class="contact-input contact-input-email form-control"></textarea>
-                <div class="contact-email-wrapper">
-                  <input name="email" placeholder="Email" type="email" class="contact-input form-control">
-                  <button class="sentbtn" type="button" onclick="submitForm()">
-                    <img src="images/sendbutton.svg" alt="Send" width="36" height="36">
-                  </button>
-                </div>
-              </form>
-            </section>
-          </div>
+        <div id="contact" class="contact-container">
+          <section class="contact-section">
+            <h2 class="contact-header">Contact Me</h2>
+            <form id="contact-form" class="contact-form" name="contact-form">
+              <img alt="lorentzos stripes" src="https://lorentzos.digital/images/bg_stripesNormal.svg" width="220"
+                height="240" decoding="async" data-nimg="1" class="stripe3" style="color:transparent" draggable="false">
+              <input name="name" placeholder="Name" type="text" class="contact-input form-control">
+              <textarea name="text" placeholder="Write me..." class="contact-input contact-input-email form-control"></textarea>
+              <div class="contact-email-wrapper">
+                <input name="email" placeholder="Email" type="email" class="contact-input form-control">
+                <button class="sentbtn" type="button" onclick="submitForm()">
+                  <img src="images/sendbutton.svg" alt="Send" width="36" height="36">
+                </button>
+              </div>
+            </form>
+          </section>
         </div>
       </div>
-    </main>
-  </div>
   
   <img alt="lorentzos stripes" src="https://lorentzos.digital/images/bg_stripesNormal.svg" width="220" height="240" decoding="async" data-nimg="1" class="stripe4" style="color:transparent" draggable="false">
   
