@@ -330,6 +330,14 @@ h2 ,a {
         color: #ffffff;
  }
 }
+
+  @media only screen and (max-width: 1200px) {
+    .ai-container {
+     display: none;
+    }
+  }
+
+
 .contact-form{
     flex-direction:column;
     width:100%;
